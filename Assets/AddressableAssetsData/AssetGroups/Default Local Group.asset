@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Default Local Group
+  m_EditorClassIdentifier: 
+  m_name: Default Local Group
+  m_data:
+    m_serializedData: []
+  m_guid: f9f1f9eb3350a6a41bf40e2280b458b0
+  m_serializeEntries:
+  - m_guid: 77bf65502b3496c4484e00e64339ae2b
+    m_address: Assets/_Complete-Game/Prefabs/LogPanel.prefab
+    m_readOnly: 0
+    m_serializedLabels:
+    - UI
+  m_readOnly: 0
+  m_settings: {fileID: 11400000, guid: f979ce1a87b28604c8b365555f9c00ea, type: 2}
+  m_schemaSet:
+    m_schemas:
+    - {fileID: 11400000, guid: 4855647a362f117469c9f0f836c5d837, type: 2}
+    - {fileID: 11400000, guid: 7aad3db2db7f3164191bfb6cd2e11f25, type: 2}
