@@ -1,62 +1,23 @@
-demo基于UnityAssetStore中的SurvivalShooterTutorial项目开发而成，并采用了同样由Tencent公司G6团队开发的xlua，和基于xlua的一套轻量级lua框架。
-demo主要演示了unity环境的下的liveCoding方案，包含 **资源、Lua、C#** 3个方面的实现。
+# demo usage：
+Install adb,and config adb environment.
 
-# 项目目录说明
---------
-除大多数目录与SurvivalShooterTutorial一致以外，demo还包含了以下几个目录。
+## lua liveCoding:
+Add and run customServer-HttpPushHostingService on the hosting window of addressables tools. 
+After entering the game, click open button to open log panel, click hotfix buttone to connect to local HostServer.
+If you are installing game on android device, you need to execute the adb command in the command line tool.
 
-```
-
-Asset
-│
-└───_Complete-Game          
-│   │
-│   └───Prefabs             //部分prefab上增加了LuaOperation组件
-│   │
-│   └───Scripts             
-│       │ 
-│       └───Core            //C#代码修改主要在这里，包含Lua框架和LiveCoding所需代码
-│
-│   
-└───StreamingAssets                     
-│   │
-│   └───LuaScripts          //Lua相关代码
-│       │   ...
-│   
-└───G6HotFix                //liveCoding相关C#代码
-│       │
-│       └───Editor
-│       │   ...
-│
-│
-│		
-```
-
-
-# demo使用方法
---------
-首先要安装adb,并正确配置adb环境变量。
-
-## Lua的liveCoding:
-在unity的addressables包中包含的Hosting界面下，新加customServer-HttpPushHostingService并启动。
-进入游戏后点击左上角的open按钮打开log面板，点击Hotfix按钮即可建立与本地HostServer的连接。
-如果是安装在android手机上时，需要在命令行中执行adb命令。
-
-```shell
 adb reverse tcp:11000 tcp:11000
-```
 
-连接后可以在HttpPushHostingService中发送测试文本查看是否连接成功，连接成功时游戏中的log面板会打印发送的文本。
+After connecting to the local HostServer, you can send text message through HttpPushHostingService to check if the connection is succeeded. 
+With a complete connection, log panel will print text sent from game.
 
-连接成功即可进行hotfix测试，在编辑器中修改lua代码，切回unity编辑器正常即可触发热更。
+If the connection is succeeded, you can test hotfix, edit Lua code in the IDE, after switching back to Unity editor, hotfix will be executed.
 
-## 资源的LiveCoding:
-在手机上使用Unity的Addressable系统时，需要通过USB线连接到开发者的pc上，并输入相应adb命令。端口对应Unity HostingServices中的端口号
+## Asset LiveCoding:
+When using Addressable system on mobile device, you need to connect usb cable to the development PC, and input adb command. The port id is the same with Unity HostingServices port id.
 
-```shell
 adb reverse tcp:53036 tcp:53036
-```
 
-## C#的LiveCoding:
-此特性需要使用修改后的AndroidPlayer来build apk，将来可能整合入Unity中国版，对解决中国游戏开发者的一些特殊需求应该也会有所帮助。
-修改C#代码后，点击顶部菜单中的G6HotFix->NewScirptBuild&Push Dll, 等待编辑器中进度条消失后，重启手机上的应用即可。
+## dll LiveCoding:
+This feature need to modify Unity Android Player. This feature will be integrated to China version of Unity and fullfill the needs of China developers.
+After modifying C# code, click menu G6HotFix->NewScirptBuild&Push Dll, waiting for the progress bar completed and restart the game to see the effect.
