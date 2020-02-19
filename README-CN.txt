@@ -3,7 +3,7 @@ demo主要演示了unity环境的下的liveCoding方案，包含 **资源、Lua�
 
 # 项目目录说明
 --------
-除大多数目录与SurvivalShooterTutorial一致以外，demo还包含了以下几个目录。
+除大多数目录与SurvivalShooterTutorial一致以外，demo还包含了以下几个目录。Demo场景需要从Start场景中进入。
 
 ```
 
